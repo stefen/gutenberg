@@ -2,20 +2,22 @@
 	position: relative;
 	margin: 0;
 
-	img {
-		display: block;
-	}
-
-	&.is-resized img {
-		height: 100%;
-	}
-
 	&.is-transient img {
 		@include loading_fade;
 	}
 
 	figcaption img {
 		display: inline;
+	}
+}
+
+// This is necessary for the editor resize handles to accurately work on a non floated small non resized image.
+.wp-block-image .wp-block-image__resizer {
+	display: inline-block;
+
+	img {
+		display: block;
+		height: 100%;
 	}
 }
 
